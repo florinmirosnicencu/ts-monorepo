@@ -1,0 +1,13 @@
+{
+  "exclude": [
+    "../tsconfig.settings.json"
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": [
+    "src"
+  ]
+}
