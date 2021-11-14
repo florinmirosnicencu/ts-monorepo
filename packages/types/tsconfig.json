@@ -1,7 +1,5 @@
 {
-  "exclude": [
-    "../tsconfig.settings.json"
-  ],
+  "extends": "../tsconfig.settings.json",
   "compilerOptions": {
     "composite": true,
     "outDir": "dist",
