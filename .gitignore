@@ -119,3 +119,5 @@ dist
 _config.yml
 
 .idea
+/storage
+/verdaccio
