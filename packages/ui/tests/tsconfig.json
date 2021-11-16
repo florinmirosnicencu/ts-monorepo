@@ -1,10 +1,12 @@
 {
-  "references": [{ "path": ".." }],
+  "references": [{ "path": ".."}],
   "compilerOptions": {
     "types": ["jest"],
     "baseUrl": "..",
     "jsx": "react",
     "noEmit": true
   },
-  "include": ["."]
+  "include": [
+    "./"
+  ]
 }

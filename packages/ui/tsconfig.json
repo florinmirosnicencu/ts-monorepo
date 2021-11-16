@@ -3,7 +3,7 @@
   "references": [
     { "path": "../types" },
     { "path": "../utils" },
-    { "path": "../data" }
+    { "path": "../data"}
   ],
   "compilerOptions": {
     "composite": true,
@@ -11,5 +11,7 @@
     "rootDir": "src",
     "jsx": "react"
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }
