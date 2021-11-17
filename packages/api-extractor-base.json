@@ -20,13 +20,13 @@
 
   /**
    * Determines the "<projectFolder>" token that can be used with other config file settings.  The project folder
-   * typically contains the tsconfig.json and package.json config files, but the path is user-defined.
+   * typically contains the tsconfig.settings.json and package.json config files, but the path is user-defined.
    *
    * The path is resolved relative to the folder of the config file that contains the setting.
    *
    * The default value for "projectFolder" is the token "<lookup>", which means the folder is determined by traversing
    * parent folders, starting from the folder containing api-extractor-base.json, and stopping at the first folder
-   * that contains a tsconfig.json file.  If a tsconfig.json file cannot be found in this way, then an error
+   * that contains a tsconfig.settings.json file.  If a tsconfig.settings.json file cannot be found in this way, then an error
    * will be reported.
    *
    * SUPPORTED TOKENS: <lookup>
@@ -67,7 +67,7 @@
    */
   "compiler": {
     /**
-     * Specifies the path to the tsconfig.json file to be used by API Extractor when analyzing the project.
+     * Specifies the path to the tsconfig.settings.json file to be used by API Extractor when analyzing the project.
      *
      * The path is resolved relative to the folder of the config file that contains the setting; to change this,
      * prepend a folder token such as "<projectFolder>".
@@ -75,16 +75,16 @@
      * Note: This setting will be ignored if "overrideTsconfig" is used.
      *
      * SUPPORTED TOKENS: <projectFolder>, <packageName>, <unscopedPackageName>
-     * DEFAULT VALUE: "<projectFolder>/tsconfig.json"
+     * DEFAULT VALUE: "<projectFolder>/tsconfig.settings.json"
      */
-    // "tsconfigFilePath": "<projectFolder>/tsconfig.json",
+    // "tsconfigFilePath": "<projectFolder>/tsconfig.settings.json",
     /**
-     * Provides a compiler configuration that will be used instead of reading the tsconfig.json file from disk.
+     * Provides a compiler configuration that will be used instead of reading the tsconfig.settings.json file from disk.
      * The object must conform to the TypeScript tsconfig schema:
      *
      * http://json.schemastore.org/tsconfig
      *
-     * If omitted, then the tsconfig.json file will be read from the "projectFolder".
+     * If omitted, then the tsconfig.settings.json file will be read from the "projectFolder".
      *
      * DEFAULT VALUE: no overrideTsconfig section
      */
@@ -160,7 +160,7 @@
     /**
      * (REQUIRED) Whether to generate a doc model file.
      */
-    "enabled": true
+    "enabled": true,
 
     /**
      * The output path for the doc model file.  The file extension should be ".api.json".
@@ -171,7 +171,7 @@
      * SUPPORTED TOKENS: <projectFolder>, <packageName>, <unscopedPackageName>
      * DEFAULT VALUE: "<projectFolder>/temp/<unscopedPackageName>.api.json"
      */
-    // "apiJsonFilePath": "<projectFolder>/temp/<unscopedPackageName>.api.json"
+    "apiJsonFilePath": "<projectFolder>/../../temp/<unscopedPackageName>.api.json"
   },
 
   /**
@@ -181,7 +181,7 @@
     /**
      * (REQUIRED) Whether to generate the .d.ts rollup file.
      */
-    "enabled": true
+    "enabled": true,
 
     /**
      * Specifies the output path for a .d.ts rollup file to be generated without any trimming.
@@ -195,7 +195,7 @@
      * SUPPORTED TOKENS: <projectFolder>, <packageName>, <unscopedPackageName>
      * DEFAULT VALUE: "<projectFolder>/dist/<unscopedPackageName>.d.ts"
      */
-    // "untrimmedFilePath": "<projectFolder>/dist/<unscopedPackageName>.d.ts",
+    "untrimmedFilePath": "<projectFolder>/dist/<unscopedPackageName>-private.d.ts",
 
     /**
      * Specifies the output path for a .d.ts rollup file to be generated with trimming for a "beta" release.
@@ -207,7 +207,7 @@
      * SUPPORTED TOKENS: <projectFolder>, <packageName>, <unscopedPackageName>
      * DEFAULT VALUE: ""
      */
-    // "betaTrimmedFilePath": "<projectFolder>/dist/<unscopedPackageName>-beta.d.ts",
+    "betaTrimmedFilePath": "<projectFolder>/dist/<unscopedPackageName>-beta.d.ts",
 
     /**
      * Specifies the output path for a .d.ts rollup file to be generated with trimming for a "public" release.
@@ -221,7 +221,7 @@
      * SUPPORTED TOKENS: <projectFolder>, <packageName>, <unscopedPackageName>
      * DEFAULT VALUE: ""
      */
-    // "publicTrimmedFilePath": "<projectFolder>/dist/<unscopedPackageName>-public.d.ts",
+    "publicTrimmedFilePath": "<projectFolder>/dist/<unscopedPackageName>.d.ts"
 
     /**
      * When a declaration is trimmed, by default it will be replaced by a code comment such as
