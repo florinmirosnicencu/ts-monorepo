@@ -9,6 +9,7 @@
     "packages/*"
   ],
   "scripts": {
+    "start": "scripty",
     "build": "scripty",
     "clean": "scripty",
     "lint": "scripty",
@@ -21,6 +22,7 @@
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
     "@commitlint/config-lerna-scopes": "^14.0.0",
+    "@microsoft/api-extractor": "^7.18.19",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "^5.3.1",
     "commitlint": "^14.1.0",
