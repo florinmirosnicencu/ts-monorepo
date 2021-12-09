@@ -1,2 +1,2 @@
 # JS/TS Monorepo
-## Just learning how people use monorepos
+## Just learning how to use a monorepo
